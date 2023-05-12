@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".fragments.HomeFragment">
+
+    <EditText
+        android:id="@+id/search_address_et"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@drawable/address_bg"
+        android:drawableStart="@drawable/icon_mark"
+        android:drawableEnd="@drawable/arrow_down"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/alata"
+        android:paddingHorizontal="12dp"
+        android:text="@string/address_example"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_address_et">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/delivery_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="@color/yellow"
+                android:drawableStart="@drawable/delivery_man"
+                android:drawablePadding="8dp"
+                android:fontFamily="sans-serif-light"
+                android:padding="8dp"
+                android:text="@string/delivery"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/pickup_btn"
+                style="@style/DeliveryMethodTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="@color/white"
+                android:text="@string/pickup" />
+
+            <TextView
+                android:id="@+id/catering_btn"
+                style="@style/DeliveryMethodTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="@color/white"
+                android:text="@string/catering" />
+
+            <TextView
+                android:id="@+id/curbside_btn"
+                style="@style/DeliveryMethodTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="@color/white"
+                android:text="@string/curbside" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </HorizontalScrollView>
+
+    <EditText
+        android:id="@+id/find_store_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/search_ic"
+        android:drawableEnd="@drawable/options_ic"
+        android:hint="@string/find_store_by_name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scroll_view" />
+
+    <HorizontalScrollView
+        android:id="@+id/product_category_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/find_store_et">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/takeaways_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/takeaways"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/takeaways_tv"
+                style="@style/ProductTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/takeaways"
+                app:layout_constraintEnd_toEndOf="@id/takeaways_iv"
+                app:layout_constraintStart_toStartOf="@id/takeaways_iv"
+                app:layout_constraintTop_toBottomOf="@id/takeaways_iv" />
+
+            <ImageView
+                android:id="@+id/grocery_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/grocery"
+                app:layout_constraintStart_toEndOf="@id/takeaways_iv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/grocery_tv"
+                style="@style/ProductTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grocery"
+                app:layout_constraintEnd_toEndOf="@id/grocery_iv"
+                app:layout_constraintStart_toStartOf="@id/grocery_iv"
+                app:layout_constraintTop_toBottomOf="@id/grocery_iv" />
+
+            <ImageView
+                android:id="@+id/convenience_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/convenience"
+                app:layout_constraintStart_toEndOf="@id/grocery_iv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/convenience_tv"
+                style="@style/ProductTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/convenience"
+                app:layout_constraintEnd_toEndOf="@id/convenience_iv"
+                app:layout_constraintStart_toStartOf="@id/convenience_iv"
+                app:layout_constraintTop_toBottomOf="@id/convenience_iv" />
+
+            <ImageView
+                android:id="@+id/pharmacy_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/pharmacy"
+                app:layout_constraintStart_toEndOf="@id/convenience_iv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pharmacy_tv"
+                style="@style/ProductTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pharmacy"
+                app:layout_constraintEnd_toEndOf="@id/pharmacy_iv"
+                app:layout_constraintStart_toStartOf="@id/pharmacy_iv"
+                app:layout_constraintTop_toBottomOf="@id/pharmacy_iv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/stores_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/alata"
+        android:text="@string/_66_stores_open"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_category_scroll" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="18dp"
+        android:paddingHorizontal="12dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stores_open"
+        tools:listitem="@layout/item_food" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
